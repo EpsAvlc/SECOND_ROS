@@ -1,0 +1,1 @@
+export LD_LIBRARY_PATH=/usr/local/lib/python3.6/site-packages/spconv && export PYTHONPATH="/usr/local/lib/python3.6/site-packages/:/home/cm/Projects/deep_learning_projects/second.pytorch:$PYTHONPATH"
