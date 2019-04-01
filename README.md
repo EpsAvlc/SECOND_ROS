@@ -7,8 +7,20 @@ Thanks for [traveller59](https://github.com/traveller59)
 ## update recode 
 
 * 4-1
+  
   The author released SECOND1.6 for applying the net into custom point cloud.
+  
   Update my code too.
+
+## dependence
+
+* [python-pcl](https://github.com/strawlab/python-pcl)
+
+## usage
+
+### PCD dataset.
+
+should rename each pcd file into 1.pcd, 2.pcd, 3.pcd....(To be described)
 
 ## TODO
 
