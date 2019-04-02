@@ -10,7 +10,7 @@ from second.data.dataset import Dataset
 
 class PCDDataset(Dataset):
     """
-        To be complete.
+        This class is designed for custom data in pcd form.
     """
 
     NumPointFeatures = 3

@@ -33,7 +33,7 @@ from second.utils.config_tool import get_downsample_factor
 
 def build(input_reader_config,
           model_config,
-          training,
+          training, # default False 
           voxel_generator,
           target_assigner):
     """Builds a tensor dictionary based on the InputReader config.

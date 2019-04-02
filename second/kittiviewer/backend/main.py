@@ -57,7 +57,6 @@ def readinfo():
     response = {"status": "normal"}
     BACKEND.root_path = root_path
     info_path = Path(instance["info_path"])
-    print(instance)
     dataset_class_name = instance["dataset_class_name"]
     BACKEND.dataset = get_dataset_class(dataset_class_name)(root_path=root_path, info_path=info_path)
     BACKEND.image_idxes = list(range(len(BACKEND.dataset)))
