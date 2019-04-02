@@ -227,6 +227,7 @@ KittiViewer.prototype = {
                     console.log("get point cloud fail!!");
                 },
                 success: function (response) {
+                    
                     self.clear();
                     response = response["results"][0];
                     var points_buf = str2buffer(atob(response["pointcloud"]));
@@ -243,14 +244,14 @@ KittiViewer.prototype = {
 
                     var rots = response["rots"];
                     var labels = response["labels"];
-                    self.gtBboxes = response["bbox"];
-                    self.gtBoxes = boxEdgeWithLabel(dims, locs, rots, 2,
-                        self.gtBoxColor, labels,
-                        self.gtLabelColor);
-                    // var boxes = boxEdge(dims, locs, rots, 2, "rgb(0, 255, 0)");
-                    for (var i = 0; i < self.gtBoxes.length; ++i) {
-                        scene.add(self.gtBoxes[i]);
-                    }
+                    // self.gtBboxes = response["bbox"];
+                    // self.gtBoxes = boxEdgeWithLabel(dims, locs, rots, 2,
+                    //     self.gtBoxColor, labels,
+                    //     self.gtLabelColor);
+                    // // var boxes = boxEdge(dims, locs, rots, 2, "rgb(0, 255, 0)");
+                    // for (var i = 0; i < self.gtBoxes.length; ++i) {
+                    //     scene.add(self.gtBoxes[i]);
+                    // }
                     if (self.drawDet && response.hasOwnProperty("dt_dims")) {
 
                         var locs = response["dt_locs"];
@@ -276,6 +277,7 @@ KittiViewer.prototype = {
                                 i * numFeatures + j];
                         }
                     }
+                    self.logger.message("Finished drawing!");
                     if (self.enableInt16){
                         for (var i = 0; i < self.pointCloud.geometry.attributes.position.array.length; i++) {
                             self.pointCloud.geometry.attributes.position.array[i] /=self.int16Factor;

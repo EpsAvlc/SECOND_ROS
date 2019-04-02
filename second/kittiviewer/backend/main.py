@@ -58,8 +58,8 @@ def readinfo():
     BACKEND.root_path = root_path
     info_path = Path(instance["info_path"])
     print(instance)
-    # dataset_class_name = instance["dataset_class_name"]
-    BACKEND.dataset = get_dataset_class("KittiDataset")(root_path=root_path, info_path=info_path)
+    dataset_class_name = instance["dataset_class_name"]
+    BACKEND.dataset = get_dataset_class(dataset_class_name)(root_path=root_path, info_path=info_path)
     BACKEND.image_idxes = list(range(len(BACKEND.dataset)))
     response["image_indexes"] = BACKEND.image_idxes
     response = jsonify(results=[response])
@@ -192,6 +192,7 @@ def inference_by_idx():
     # remove_outside = instance["remove_outside"]
     idx = BACKEND.image_idxes.index(image_idx)
     example = BACKEND.dataset[idx]
+    print(example)
     # don't forget to pad batch idx in coordinates
     example["coordinates"] = np.pad(
         example["coordinates"], ((0, 0), (1, 0)),

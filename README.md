@@ -6,6 +6,11 @@ Thanks for [traveller59](https://github.com/traveller59)
 
 ## update recode 
 
+* 4-2 
+
+  Succeed to display pcd file.Continue to construct ros ver.
+  ![custom-w150](images/custom.png)
+
 * 4-1
   
   The author released SECOND1.6 for applying the net into custom point cloud.

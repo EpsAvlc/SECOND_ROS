@@ -7,12 +7,14 @@ from second.core import box_np_ops
 from second.data.dataset import Dataset
 from second.data.kitti_dataset import KittiDataset
 from second.data.nuscenes_dataset import NuScenesDataset
+from second.data.pcd_dataset import PCDDataset
 from second.utils.progress_bar import progress_bar_iter as prog_bar
 
 def get_dataset_class(name) -> Dataset:
     return {
         "KittiDataset": KittiDataset,
         "NuScenesDataset": NuScenesDataset,
+        "PCDDataset":PCDDataset,
     }[name]
 
 

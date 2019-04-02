@@ -27,6 +27,8 @@ from second.utils.progress_bar import ProgressBar
 
 def example_convert_to_torch(example, dtype=torch.float32,
                              device=None) -> dict:
+    print("here is the example")
+    print(example)
     device = device or torch.device("cuda:0")
     example_torch = {}
     float_names = [
