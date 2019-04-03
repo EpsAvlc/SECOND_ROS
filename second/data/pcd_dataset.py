@@ -13,7 +13,7 @@ class PCDDataset(Dataset):
         This class is designed for custom data in pcd form.
     """
 
-    NumPointFeatures = 3
+    NumPointFeatures = 4
     def __init__(self, root_path, info_path=None, class_names=None,
                  prep_func=None,
                  num_point_features=None):
@@ -42,7 +42,7 @@ class PCDDataset(Dataset):
         pc = pcl.load(filename)
         points = []
         for point in pc:
-            points.append([point[0], point[1], point[2]])
+            points.append([point[0], point[1], point[2]], point[3])
         # print(points)
         res["lidar"]["points"] = np.array(points)
         print(res["lidar"]["points"].shape)

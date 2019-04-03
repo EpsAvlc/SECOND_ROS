@@ -164,6 +164,7 @@ def build_network_():
     device = device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     net = build_network(config.model.second).to(device).float().eval()
     net.load_state_dict(torch.load(ckpt_path))
+    print(ckpt_path)
     eval_input_cfg = config.eval_input_reader
     BACKEND.dataset = input_reader_builder.build(
         eval_input_cfg,
