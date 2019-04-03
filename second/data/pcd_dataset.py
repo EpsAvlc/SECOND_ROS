@@ -39,10 +39,10 @@ class PCDDataset(Dataset):
         }
         print(query)
         filename = str(self.dataset_dir) + '/' +str(query)+ ".pcd"
-        pc = pcl.load(filename)
+        pc = pcl.load_XYZI(filename)
         points = []
         for point in pc:
-            points.append([point[0], point[1], point[2]], point[3])
+            points.append([point[0], point[1], point[2], point[3]])
         # print(points)
         res["lidar"]["points"] = np.array(points)
         print(res["lidar"]["points"].shape)

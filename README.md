@@ -8,7 +8,7 @@ Thanks for [traveller59](https://github.com/traveller59)
 
 * 4-3
 
-![](images/incorrect.png)
+  update pcd_dataset.py to read points in xyzi format.
 
 * 4-2 
 
